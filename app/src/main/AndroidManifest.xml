@@ -32,9 +32,7 @@
                 android:resource="@xml/flashlight_app_widget_info" />
         </receiver>
         <receiver android:name="FlashlightReceiver">
-            <intent-filter>
-                <action android:name="FLASHLIGHT_WIDGET"></action>
-            </intent-filter>
+            
         </receiver>
     </application>
 

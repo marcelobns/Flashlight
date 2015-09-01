@@ -40,12 +40,13 @@ public class FlashlightAppWidget extends AppWidgetProvider {
                                 int appWidgetId) {
 
         Intent receiver = new Intent(context, FlashlightReceiver.class);
-        receiver.setAction("FLASHLIGHT_WIDGET");
         receiver.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
+
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, receiver, 0);
 
         RemoteViews views = new RemoteViews(context.getPackageName(),
                 R.layout.flashlight_app_widget);
+
         views.setOnClickPendingIntent(R.id.flashButton, pendingIntent);
 
         appWidgetManager.updateAppWidget(appWidgetId, views);
